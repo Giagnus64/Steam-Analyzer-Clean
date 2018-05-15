@@ -1,3 +1,11 @@
+import {http} from "./easyhttp3";
+
+
+
+
+
+
+
 //Construct games class to pull from SteamAPI
 class Games {
  	constructor(steamID){
