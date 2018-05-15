@@ -58,3 +58,5 @@ class EasyHTTP{
 	 	return resData;
   }
 }
+
+export const http = new EasyHTTP();
