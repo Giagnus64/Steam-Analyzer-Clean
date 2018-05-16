@@ -1,0 +1,11 @@
+@define-mixin small{
+	@media(max-width:300px){
+	
+	}
+}
+
+@define-mixin bigtext{
+	font-size:40px;
+}
+
+$mainBlue:blue;
