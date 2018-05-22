@@ -13,18 +13,34 @@ class Games {
 	//set steamID to user's entered id
 	this.steamID = steamid;
 	let sortedObj;
+	let playerName;
 	//run get request via http library, and return sorted object
-	return http.get(`https://cors-anywhere.herokuapp.com/http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${this.APIkey}&include_appinfo=1&steamid=${this.steamID}&format=json`)
+	return http.get(`https://cors-anywhere.herokuapp.com/http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${this.APIkey}&include_appinfo=1&include_played_free_games=1&steamid=${this.steamID}&format=json`)
 		.then(results => {
-			//returns response within results.response
 			//sort Games via function
 			 sortedObj = this.sortGames(results.response);
 			//return the sorted games object
 			return sortedObj;
 					})
-		.catch(err => console.log(err));
+		.catch(err => console.log(err));	
 		
-		
+	}
+
+	//Get's player's ID
+	getPlayerName(steamid){
+		this.steamID = steamid;
+		let playerName;
+		//run get request via http library to get player's id
+		return http.get(`https://cors-anywhere.herokuapp.com/http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${this.APIkey}&steamids=${this.steamID}`)
+		.then(results =>{
+			playerName = results.response.players[0].personaname;
+			return playerName;
+
+		})
+		.catch(err =>{
+			console.log(err);
+		});
+
 	}
 
 	//Sorts Games into played and unplayed arrays, by playtime and name, respectively
