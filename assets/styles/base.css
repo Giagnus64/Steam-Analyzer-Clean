@@ -1,0 +1,42 @@
+html, body{
+	font-family: 'Lato', 'sans-serif';
+	box-sizing:border-box; 
+
+	font-size:14px;
+
+	@mixin atSmall{
+		font-size:16px;
+	}
+
+	background-color:rgba(125, 166, 253, 0.8);
+}
+
+body{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	width:100%;
+
+}
+
+.wrapper{
+
+
+	@mixin atSmall{
+	width:85%;
+	margin:0 auto;
+	}
+
+
+
+}
+
+.submit-state{
+	display:none;
+}
+
+.display-state{
+		& h1{
+			text-align:center;
+		}
+}

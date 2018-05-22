@@ -22,14 +22,27 @@ function displayGames() {
 
 /*
 //******* NEXT STEPS *******
-//Convert playtime data to minutes
-//Start designing the UI PAINT method?
-//BUILD the UI
-//THink of possible states when building UI - allow user to sort by game name, total playtime, and other things? if adding metacritic data sort by rating????
+
+//Convert playtime data to minutes - do during sort or in UI
+//Start designing the UI PAINT method
+Allow user to sort by game name, total playtime, and other things? if adding metacritic data sort by rating????.. maybe store in local data if sorting
+
+//Make sure to validate the steamid using regexp or something else
+
+.. make sure to add to error cases with promises and etc some sort of alert function
+
+..make sure to add loading screen if necessary
+
+..app will have display state and submit state, switch between two and hide appropriate buttons/content
 
 
 
-			`
+
+
+
+			
+USE BELOW AS PARAGRAPH OR LIST TO START OUT
+
 			<h2> You have ${games.game_count} games in your library. 
 			You have played ${playedArr.length} games. 
 			You have not played ${unplayedArr.length} games. 
@@ -39,12 +52,6 @@ function displayGames() {
 			<img src="http://media.steampowered.com/steamcommunity/public/images/apps/${game1.appid}/${game1.img_icon_url}.jpg">
 			<img src="http://media.steampowered.com/steamcommunity/public/images/apps/${game1.appid}/${game1.img_logo_url}.jpg">`
 
-}
-
-}
-
-getGames();
-this.steamID = '76561197999989160';
 
 //Generate the UI with Results
 	//Quick Facts/Minor UI
@@ -53,8 +60,5 @@ this.steamID = '76561197999989160';
 	//Never Played
 	//List of Games
 
-//Make a games object/Array and sort it according to the playtime numbers
-//convert playtimes to proper formates - i.e. convert inutes to Hours/Days/Etc
-//Filter out results according to DLC/Toybox/Etc.?
 */
 	

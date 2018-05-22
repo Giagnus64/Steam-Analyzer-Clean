@@ -1,3 +1,19 @@
 @import "normalize.css";
 @import "mixins.css";
+@import "base.css";
 @import "header.css";
+@import "btn.css";
+@import "main-hero.css";
+@import "form.css";
+@import "row.css";
+@import "major-games.css";
+@import "large-table.css";
+@import "table-wrapper.css";
+@import "footer.css";
+
+
+/*
+Gradient background? Also, Gradient header?
+
+
+*/
