@@ -17,22 +17,50 @@ games.getGames('76561197999989160')
 .catch(err => console.log(err));*/
 
 
+//Event Listeners
 
+//Submit steamid
+document.querySelector(".btn-submit").addEventListener('click', verifyInput);
+
+//Enter a Different Steam Id
+document.querySelector(".changeID").addEventListener('click', changeState);
+
+function changeState(){
+	ui.showSubmitState();
+}
+
+function verifyInput(e){
+	//e.preventDefault();
+	const idInput = document.querySelector("#steamID").value;
+	const re = /^[0-9]{17}?/
+	if(idInput === '' || !re.test(idInput)){
+		ui.showAlert('Please enter a valid steamID', 'error');
+	} else{	
+		ui.showDisplayState();
+		displayGames(idInput);
+
+	}
+}
 
 function displayGames(steamid) {
 	//called when user submits their id
 	//switches state from submit to view
 	//getgames function sends the request and then sorts the games and returns an object with sorted arrays and game count
-	games.getPlayerName('76561197999989160')
+	games.getPlayerName(steamid)
 		.then(response =>{
 			ui.displayName(response)})
-		.catch(err => console.log(err));
+		.catch(err => {
+			ui.showAlert('Sorry, there was an error getting your imformation. Please check your steam community settings and make sure you have input the corrent Steam64 ID.', 'error');
+			console.log(err)
+		});
 
-	games.getGames('76561197999989160')
+	games.getGames(steamid)
 		.then(response =>{
 			ui.paint(response);
 		})
-		.catch(err => console.log(err));	
+		.catch(err => {
+			ui.showAlert('Sorry, there was an error getting your imformation. Please check your steam community settings and make sure you have input the corrent Steam64 ID.', 'error');
+			console.log(err)});	
 }
 
 
@@ -40,21 +68,16 @@ function displayGames(steamid) {
 //******* NEXT STEPS *******
 Allow user to sort by game name, total playtime, and other things? if adding metacritic data sort by rating????.. maybe store in local data if sorting
 
-//Make sure to validate the steamid using regexp or something else
+ Add links to bototm
 
-.. make sure to add to error cases with promises and etc some sort of alert function
+FIX CSS
+COMMENT CODE
+figure out error testing regarding wrong ID
+maybe improt ui class and call show alert if possible?
+CONSIDER MORE FEATURES
 
-..make sure to add loading screen if necessary
-
-..app will have display state and submit state, switch between two and hide appropriate buttons/content
 
 
-
-//Generate the UI with Results
-	//Quick Facts/Minor UI
-	//Most Played
-	//Least Played(minus games with 0)
-	//Never Played
 	//List of Games
 
 */

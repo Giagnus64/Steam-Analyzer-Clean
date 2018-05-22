@@ -32,10 +32,11 @@ body{
 }
 
 .submit-state{
-	display:none;
+	display:block;
 }
 
 .display-state{
+	display:none;
 		& h1{
 			text-align:center;
 		}

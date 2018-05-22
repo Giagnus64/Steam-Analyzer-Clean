@@ -3,12 +3,25 @@ class UI{
 		//html selectors for dynamic input
 		this.submitState = document.querySelector(".submit-state");
 		this.displayState = document.querySelector(".display-state");
+		this.changeID = document.querySelector(".changeID");
 		this.quickLook = document.querySelector(".quick-look");
 		this.steamName = document.querySelector(".steamname");
 		this.majorGames = document.querySelector(".major-games");
 		this.neverPlayed = document.querySelector(".np-table-body");
 		this.allPlayed = document.querySelector(".all-played-body");
 	}
+
+	showSubmitState(){
+		this.displayState.style.display = "none";
+		this.changeID.style.display = "none";
+		this.submitState.style.display = "block";
+	}
+	showDisplayState(){
+		this.submitState.style.display = "none";
+		this.displayState.style.display = "block";
+		this.changeID.style.display = "block";
+	}
+
 
 	//paint ui
 	paint(sortedObj){
@@ -70,11 +83,43 @@ class UI{
 
 	}
 
-	//display player name
+	//Display player name
 	displayName(name){
 		this.steamName.textContent= name;
-		console.log(name);
 	}	
+
+	//Show alert message
+	showAlert(message, className){
+		this.clearAlert();
+		//Create div
+		const div = document.createElement('div');
+		//Add classes
+		div.className = className;
+		//Add text
+		div.appendChild(document.createTextNode(message));
+		//Get Parent
+		const container = document.querySelector('.submit-state');
+		//Get posts
+		const hero = document.querySelector('.main-hero');
+		//Insert alert div before posts in container before posts div
+		container.insertBefore(div, hero);
+
+		//Timeout
+		setTimeout(() => {
+			this.clearAlert();
+		}, 3000);
+
+	}
+
+	//Clear Alert
+	clearAlert(){
+		const currentAlert = document.querySelector('.error');
+
+		if(currentAlert){
+			currentAlert.remove();
+		}
+
+	}
 		
 
 }
