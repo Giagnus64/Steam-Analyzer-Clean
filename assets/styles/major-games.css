@@ -1,0 +1,53 @@
+.major-games{
+	max-width:800px;
+	max-height:550px;
+	margin:0 auto;
+	display:flex;
+	border:10px solid goldenrod;
+	box-sizing:border-box;
+	flex-wrap:wrap;
+	
+	@mixin atSmall{
+		
+	}
+	
+	& div{
+		width:250px;
+		margin:0 auto;
+		display:inline-block;
+		background-color:rgba(255,201,158,0.6);
+		border-radius:5%;
+		border:none;
+		text-align:center;
+		justify-content:space-between;
+		flex-basis:250px;
+		align-content:space-around;
+		box-shadow:1px 2px 4px black;
+		
+		@mixin atSmall{
+			width:50%;
+		}
+		
+		@mixin atMedium{
+			justify-content:space-between;
+		}
+
+		& h4{
+			font-weight:400;
+			font-style:italic;
+		}
+
+		
+	}
+}
+
+.major-games div.least-played{
+	
+	margin-top:10px;
+
+	@mixin atSmall{
+	
+	margin-top:0;
+
+	}
+}

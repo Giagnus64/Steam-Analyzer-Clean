@@ -1,0 +1,13 @@
+.large-table{
+
+	text-align:center;
+
+	border:2px solid black;
+
+	& th{
+		border:2px solid black;
+	}
+	& td{
+		border:2px solid black;
+	}
+}
