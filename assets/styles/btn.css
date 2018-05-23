@@ -8,22 +8,24 @@
 
 	&.btn-large{
 		
-		display:inline-block;
-		font-size:14px;
+		display:none;
+		font-size:12px;
 		height:33px;
-		position:absolute;
 		background-color:black;
 		color:white;
 		border:none;
-		right:1%;
-		top:4.5%;
+		float:right;
+		margin-right:5px;
+		margin-top:21px;
+
+		@mixin clearFix;
+		
 		
 		
 		@mixin atSmall{
 			font-size:18px;
 			height:40px;
-			top:5%;
-			right:2%;
+			margin-top:17px;
 		}
 		
 			
