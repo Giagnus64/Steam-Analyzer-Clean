@@ -9,17 +9,20 @@ class UI{
 		this.majorGames = document.querySelector(".major-games");
 		this.neverPlayed = document.querySelector(".np-table-body");
 		this.allPlayed = document.querySelector(".all-played-body");
+		this.footer = document.querySelector(".footer");
 	}
 
 	showSubmitState(){
 		this.displayState.style.display = "none";
 		this.changeID.style.display = "none";
 		this.submitState.style.display = "block";
+		this.footer.style.position = "absolute";
 	}
 	showDisplayState(){
 		this.submitState.style.display = "none";
 		this.displayState.style.display = "block";
-		this.changeID.style.display = "block";
+		this.changeID.style.display = "inline-block";
+		this.footer.style.position ="relative";
 	}
 
 
@@ -32,13 +35,13 @@ class UI{
 		//generate first paragraph
 		let outputQL = '';
 		outputQL +=`
-			<p>You have ${sortedObj.game_count} games in your library. 
+			<p class="quick-look">You have <strong>${sortedObj.game_count} games</strong> in your library. 
 			You have played ${sortedObj.playedArr.length} games. 
-			You have not played ${sortedObj.unplayedArr.length} games.</p>`; 
+			You have <strong>NOT</strong> played ${sortedObj.unplayedArr.length} games.</p>`; 
 
 		this.quickLook.innerHTML = outputQL;
 
-		//generate major games lists
+		//generate major games divs
 		let outputMG = '';
 		outputMG += `
 		<div class="most-played">
@@ -63,7 +66,7 @@ class UI{
 			<tr>
 		  		<td><img src="http://media.steampowered.com/steamcommunity/public/images/apps/${gameObj.appid}/${gameObj.img_icon_url}.jpg" alt="" class="logo"></td>
 		  		<td><span class="game-name">${gameObj.name}</span></td>
-		  		<td><span class="playtime">N/A</span></td>
+		  		
 		  	</tr>`;
 		});
 		this.neverPlayed.innerHTML = outputNP;
@@ -116,11 +119,31 @@ class UI{
 		const currentAlert = document.querySelector('.error');
 
 		if(currentAlert){
-			currentAlert.remove();
+			this.fade(currentAlert);
 		}
 
 	}
-		
+	//Function to fade element after some time
+ 	fade(element) {
+    	var op = 1;  // initial opacity
+    	var timer = setInterval(function () {
+        if (op <= 0.1){
+           	clearInterval(timer);
+           	element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    	}, 50);
+	}	
+
+	//Show Error
+	showError(){
+		//Replace results with error
+		const container = document.querySelector('.display-state');
+		container.innerHTML = '<div class="error">Sorry, there was an error getting your information. Please check your steam community settings and make sure you have input the correct Steam64 ID.</div>'	
+		this.footer.style.position = 'absolute';	
+	}	
 
 }
 

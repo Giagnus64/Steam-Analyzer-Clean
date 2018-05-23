@@ -4,6 +4,7 @@
 	margin:0 auto;
 	display:flex;
 	border:10px solid goldenrod;
+	border:none;
 	box-sizing:border-box;
 	flex-wrap:wrap;
 	

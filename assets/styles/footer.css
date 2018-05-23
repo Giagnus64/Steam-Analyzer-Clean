@@ -1,4 +1,6 @@
 .footer{
+	position:absolute;
+	bottom:0;
 	width:100%;
 	padding-top:1px;
 	padding-bottom:10px;
@@ -21,12 +23,21 @@
 	}
 
 	& .split{
+		display:inline-block;
 		width:100%;
-		
-		& span{
-			
+		margin-top:15px;
+		text-align:left;
+
+		& .copy{
+			margin-left:10px;
+		}
+
+		& .links{
+			float:right;
+			margin-top:-12px;
+			margin-right:20px;
+			@mixin clearFix;
 			@mixin atSmall{
-				margin-right:250px;
 			}
 		}
 	}
