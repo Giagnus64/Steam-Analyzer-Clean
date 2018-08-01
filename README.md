@@ -77,7 +77,7 @@ You need [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com).
     * postcss-import
     * postcss-mixins
     * postcss-simple-vars
-    * postcss-nested
+    * postcss-cssnext
     * normalize.css
     * webpack
 
