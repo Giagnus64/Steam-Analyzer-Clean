@@ -4,7 +4,6 @@ import {http} from "./easyhttp3";
 class Games {
  	constructor(){
  		this.APIkey = 'AF45FA8544E0799673BE364C8E8F97E2';
- 		//My steam ID for testing purposes
 		this.steamID = '';
  	}
 

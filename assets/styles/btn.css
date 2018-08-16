@@ -10,26 +10,34 @@
 		
 		display:none;
 		font-size:12px;
+		width:30%;
 		height:33px;
 		background-color:black;
 		color:white;
-		border:none;
 		float:right;
 		margin-right:5px;
-		margin-top:21px;
-
+		margin-top:15px;
+		text-align:center;
 		@mixin clearFix;
 		
 		
 		
 		@mixin atSmall{
-			font-size:18px;
+			font-size:15.5px;
+			width:35%;
 			height:40px;
-			margin-top:17px;
+			margin-top:13px;
 		}
-		
-			
-		
+
+		@mixin atMedium{
+			font-size:20px;
+		}
+
+		@mixin atLarge{
+			max-width:350px;
+			margin-right:3%;
+		}
+				
 	}
 
 	&.btn-submit{
@@ -39,5 +47,13 @@
 		@mixin atSmall{
 			margin-left:10px;
 		}
+	}
+	&.btn-example{
+		display:block;
+		width:auto;
+		height:30px;
+		margin:0 auto;
+		margin-top:10px;
+		text-align:center;
 	}
 }
