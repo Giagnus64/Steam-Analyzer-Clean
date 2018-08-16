@@ -406,7 +406,7 @@ body{
 
 .header h1{
 	display:inline-block;
-
+	margin-left:5%;
 }
 
 .btn{
@@ -420,13 +420,14 @@ body{
 .btn.btn-large {
   display:none;
   font-size:12px;
+  width:30%;
   height:33px;
   background-color:black;
   color:white;
-  border:none;
   float:right;
   margin-right:5px;
-  margin-top:21px;
+  margin-top:15px;
+  text-align:center;
 }
 
 .btn.btn-large::after {
@@ -438,9 +439,25 @@ body{
 @media (min-width:530px) {
 
   .btn.btn-large {
-    font-size:18px;
+    font-size:15.5px;
+    width:35%;
     height:40px;
-    margin-top:17px;
+    margin-top:13px;
+  }
+}
+
+@media (min-width:800px) {
+
+  .btn.btn-large {
+    font-size:20px;
+  }
+}
+
+@media (min-width:1010px) {
+
+  .btn.btn-large {
+    max-width:350px;
+    margin-right:3%;
   }
 }
 
@@ -455,6 +472,15 @@ body{
   .btn.btn-submit {
     margin-left:10px;
   }
+}
+
+.btn.btn-example {
+  display:block;
+  width:auto;
+  height:30px;
+  margin:0 auto;
+  margin-top:10px;
+  text-align:center;
 }
 
 .main-hero p {
@@ -483,9 +509,6 @@ form{
   }
 }
 
-.row{
-}
-
 .major-games{
 	max-width:800px;
 	max-height:550px;
@@ -503,8 +526,7 @@ form{
 
 @media (min-width:530px) {
 
-  .major-games {
-}
+  .major-games {}
 }
 
 .major-games div {
@@ -598,11 +620,11 @@ form{
 	bottom:0;
 	width:100%;
 	padding-top:1px;
-	padding-bottom:10px;
+	padding-bottom:20px;
 
 	margin:0 auto;
 	margin-top:15px;
-	background-color:mistyrose;
+	background-color:rgba(255, 201, 158, .6);
 	color:black;
 	text-align:center
 
@@ -611,41 +633,45 @@ form{
 .footer img {
   height:25px;
   width:25px;
-  margin:5px 5px 0 5px;
-  text-align:right;
+  margin:8px 3px 0 3px;
 }
 
 .footer p {
-  margin-bottom:0;
-}
-
-.footer .split {
-  display:inline-block;
-  width:100%;
-  margin-top:15px;
-  text-align:left;
-}
-
-.footer .split .copy {
-  margin-left:10px;
-}
-
-.footer .split .links {
-  float:right;
-  margin-top:-12px;
-  margin-right:20px;
-}
-
-.footer .split .links::after {
-  content:"";
-  clear:both;
-  display:table;
+  margin-bottom:10px;
 }
 
 @media (min-width:530px) {
 
-  .footer .split .links {
+  .footer p {
+    font-size:14px;
+  }
 }
+
+@media (min-width:800px) {
+
+  .footer p {
+    font-size:20px;
+  }
+}
+
+.footer .split {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  width:100%;
+  text-align:center;
+  margin-bottom:-10px;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+
+.footer .split .copy {
+  margin-right:10px;
+}
+
+.footer .split .links {
+  margin-top:-14px;
 }
 
 .quick-look{
@@ -671,6 +697,3 @@ form{
   }
 }
 
-/*
-Icons
-*/

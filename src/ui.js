@@ -21,7 +21,7 @@ class UI{
 	showDisplayState(){
 		this.submitState.style.display = "none";
 		this.displayState.style.display = "block";
-		this.changeID.style.display = "inline-block";
+		this.changeID.style.display = "block";
 		this.footer.style.position ="relative";
 	}
 

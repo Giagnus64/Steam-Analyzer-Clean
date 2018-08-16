@@ -3,42 +3,44 @@
 	bottom:0;
 	width:100%;
 	padding-top:1px;
-	padding-bottom:10px;
+	padding-bottom:20px;
 
 	margin:0 auto;
 	margin-top:15px;
-	background-color:mistyrose;
+	background-color:rgba(255,201,158,0.6);
 	color:black;
 	text-align:center;
 
 	& img{
 		height:25px;
 		width:25px;
-		margin:5px 5px 0 5px;
-		text-align:right;
+		margin:8px 3px 0 3px;
 	}
 
 	& p{
-		margin-bottom:0;
+		margin-bottom:10px;
+
+		@mixin atSmall{
+			font-size:14px;
+		}
+		@mixin atMedium{
+			font-size:20px;
+		}
 	}
 
 	& .split{
-		display:inline-block;
+		display:flex;
 		width:100%;
-		margin-top:15px;
-		text-align:left;
+		text-align:center;
+		margin-bottom:-10px;
+		justify-content:center;
 
 		& .copy{
-			margin-left:10px;
+			margin-right:10px;	
 		}
 
 		& .links{
-			float:right;
-			margin-top:-12px;
-			margin-right:20px;
-			@mixin clearFix;
-			@mixin atSmall{
-			}
+			margin-top:-14px;	
 		}
 	}
 

@@ -9259,11 +9259,6 @@ var _games = __webpack_require__(330);
 
 var _ui = __webpack_require__(331);
 
-//Display-state test code
-//ui.showDisplayState();
-//displayGames('76561197999989160')
-
-
 //Event Listeners
 
 //Submit steamid
@@ -9271,6 +9266,8 @@ document.querySelector(".btn-submit").addEventListener('click', verifyInput);
 
 //Enter a Different Steam Id
 document.querySelector(".changeID").addEventListener('click', changeState);
+//Example button
+document.querySelector(".btn-example").addEventListener('click', showExample);
 
 //calls state change from UI class
 function changeState() {
@@ -9311,14 +9308,11 @@ function displayGames(steamid) {
 		console.log(err);
 	});
 }
-
-/*
-//******* NEXT STEPS *******
-Allow user to sort by game name, total playtime, and other things
-Think about somehow incorporating metacritic games API
-FIX CSS
-CONSIDER MORE FEATURES
-*/
+//shows an example state with designer's steamID
+function showExample() {
+	_ui.ui.showDisplayState();
+	displayGames('76561197999989160');
+}
 
 /***/ }),
 /* 330 */
@@ -9344,7 +9338,6 @@ var Games = function () {
 		_classCallCheck(this, Games);
 
 		this.APIkey = 'AF45FA8544E0799673BE364C8E8F97E2';
-		//My steam ID for testing purposes
 		this.steamID = '';
 	}
 
@@ -9508,7 +9501,7 @@ var UI = function () {
 		value: function showDisplayState() {
 			this.submitState.style.display = "none";
 			this.displayState.style.display = "block";
-			this.changeID.style.display = "inline-block";
+			this.changeID.style.display = "block";
 			this.footer.style.position = "relative";
 		}
 
