@@ -62,7 +62,5 @@ function displayGames(steamid) {
 //******* NEXT STEPS *******
 Allow user to sort by game name, total playtime, and other things
 Think about somehow incorporating metacritic games API
-FIX CSS
-CONSIDER MORE FEATURES
 */
 	
