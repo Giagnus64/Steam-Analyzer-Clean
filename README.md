@@ -23,7 +23,7 @@ You need [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com).
     $ npm install
 
 
-### Start Webpack Dev Server
+### Start Webpack Dev Server(watches JS files for changes)
 
     $ npm start
 
